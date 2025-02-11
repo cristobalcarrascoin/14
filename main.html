@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            background-color: #FFD1DC; /* Rosa pastel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid black;
+            color: white;
+            cursor: pointer;
+        }
+        .button-si {
+            background-color: green;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .button-no {
+            background-color: red;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .spacer {
+            height: 25px; /* Adjust the height as needed */
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¿Quieres ser mi San Valentin?</h1>
+            <div class="spacer"></div>
+        <div>
+            <button class="button button-si" id="button-si">Si</button>
+            <button class="button button-no" id="button-no">No</button>
+        </div>
+    </div>
+
+    <script>
+        const buttonNo = document.getElementById('button-no');
+        const buttonSi = document.getElementById('button-si');
+
+        buttonNo.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - buttonNo.offsetWidth);
+            const y = Math.random() * (window.innerHeight - buttonNo.offsetHeight);
+            buttonNo.style.position = 'absolute';
+            buttonNo.style.left = `${x}px`;
+            buttonNo.style.top = `${y}px`;
+        });
+
+        buttonSi.addEventListener('click', () => {
+            window.location.href = 'si.html';
+        });
+    </script>
+</body>
+</html>
